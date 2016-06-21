@@ -1,25 +1,130 @@
+
 <head>
-  <title>simple</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+<div class="section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-justify text-primary" style="font-size: 100px">
+                    <center>
+                        <b>
+                            <i>Fogg Chal Raha Hai....</i>
+                        </b>
+                    </center>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
 
-  {{> hello}}
-  {{> info}}
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="embed-responsive embed-responsive-16by9" >
+                <center>  <iframe  src="https://www.youtube.com/embed/4quN-Bnu--M" frameborder="0" allowfullscreen></iframe></center>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <a class="btn btn-primary" href="http://www.amazon.in/s/ref=nb_sb_ss_c_0_4?url=search-alias%3Daps&field-keywords=fogg&sprefix=fogg%2Caps%2C329&rh=i%3Aaps%2Ck%3Afogg">Take me to Amazon Fogg store</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <a class="btn btn-primary" href="http://www.flipkart.com/search?q=fogg%20body%20spray&as=on&as-show=on&otracker=start&as-pos=3_q_fogg">Take me to Flipkart Fogg store</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{>tweetBox}}
+
+
+<footer class="section section-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Fogg Body Spray</h1>
+                <p>Bina Gas Wala Deo
+                    <br>No Gas , Only Deo
+                    <br>Deos and Perfumes</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="text-info text-right">
+                    <br>
+                    <br>
+                </p>
+                <div class="row">
+                    <div class="col-md-12 hidden-xs text-right">
+                        <a href="https://www.instagram.com/kyachalrahahai/"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                        <a href="https://twitter.com/FoggChalRahaHai"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                        <a href="https://www.facebook.com/Fogg-864376867024128/"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
 </body>
+<template name="tweetBox">
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="media-list text-left">
+
+                        <center><h2 style="color: #c7254e"><i><B>Live Tweets...</B></i></h2></center>
+
+                        {{#each recentTweets}}
+
+                            <li class="media">
+                                <a class="pull-left" href="#"><img class="media-object" src={{tweet.user.profile_image_url}} height="64" width="64"></a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"> {{tweet.user.name}}</h4>
+                                    <p>{{tweet.text}}</p>
+                                </div>
+                            </li>
+
+
+
+
+                        {{/each}}
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com">Discussions</a></li>
-  </ul>
-</template>
+
+
+
+
