@@ -19,7 +19,7 @@ var T = new Twit({
 //
 // filter the public stream by english tweets containing `#`
 //
-var stream = T.stream('statuses/filter', { track: ['#fogg',"#kya",'#chal','#raha','#hai','#Kya chal raha hai','#kyachalrahahai','#perfume','#deodrant','#spray'] })
+var stream = T.stream('statuses/filter', { track: ['#fogg',"#kya",'#chal','#raha','#hai','#Kya chal raha hai','#kyachalrahahai','#perfume','#deodrant','#spray'] ,language:"en"})
 
 stream.on('tweet',Meteor.bindEnvironment( function (tweet) {
 
