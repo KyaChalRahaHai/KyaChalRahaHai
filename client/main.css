@@ -6763,3 +6763,10 @@ body {
     background-attachment: fixed;
 }
 /* PINGENDO COMMENT DO NOT REMOVE */
+/*huge button*/
+.btn-huge{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+
