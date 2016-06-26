@@ -5,6 +5,8 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
+    "fibers": "^1.0.13",
+    "meteor-node-stubs": "~0.2.0",
+    "twit": "^2.2.4"
   }
 }

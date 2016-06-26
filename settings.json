@@ -1,8 +1,0 @@
-{
-  "galaxy.meteor.com": {
-    "env": {
-      "MONGO_URL": "mongodb://<fogg>:<fogg@123>@ds021034.mlab.com:21034/tweetlist"
-
-    }
-  }
-}
