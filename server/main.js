@@ -19,13 +19,13 @@ var T = new Twit({
 //
 // filter the public stream by english tweets containing `#`
 //
-var stream = T.stream('statuses/filter', { track: ['#fogg',"#kya",'#chal','#raha','#hai','#Kya chal raha hai','#kyachalrahahai','#perfume','#deodrant','#spray'] ,language:"en"})
-
+//var stream = T.stream('statuses/filter', { track: ['fogg','scent','kya chal raha hai','kyachalrahahai','perfume','deodrant','spray','fogg chal raha hai'] ,language:"en"})
+var stream = T.stream('statuses/filter', { track: ['kya,chal,raha,hai,fogg'] ,language:"en"})
 stream.on('tweet',Meteor.bindEnvironment( function (tweet) {
 
 
 
-    //console.log(tweet);
+    console.log(tweet);
     var stringData=JSON.stringify(tweet);
     var jsonData=JSON.parse(stringData);
     var timeMilliSeconds=Math.floor(Date.now());
