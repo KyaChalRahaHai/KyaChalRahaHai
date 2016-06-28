@@ -20,7 +20,7 @@ var india=['67.4560546875','5.3972734077','98.0419921875','37.5445773209'];
 // filter the public stream by english tweets containing `#`
 //
 //var stream = T.stream('statuses/filter', { track: ['fogg','scent','kya chal raha hai','kyachalrahahai','perfume','deodrant','spray','fogg chal raha hai'] ,language:"en"})
-var stream = T.stream('statuses/filter', { track: ['fogg','kya chal','whats happening','whats up'] ,language:"en"})
+var stream = T.stream('statuses/filter', { track: ['fogg','kya chal','whats happening','#fogg'] ,language:"en"})
 stream.on('tweet',Meteor.bindEnvironment( function (tweet) {
 
 
