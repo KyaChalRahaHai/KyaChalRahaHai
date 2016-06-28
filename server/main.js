@@ -14,27 +14,34 @@ var T = new Twit({
 });
 
 
-
+var india=['67.4560546875','5.3972734077','98.0419921875','37.5445773209'];
 
 //
 // filter the public stream by english tweets containing `#`
 //
 //var stream = T.stream('statuses/filter', { track: ['fogg','scent','kya chal raha hai','kyachalrahahai','perfume','deodrant','spray','fogg chal raha hai'] ,language:"en"})
-var stream = T.stream('statuses/filter', { track: ['kya,chal,raha,hai,fogg'] ,language:"en"})
+var stream = T.stream('statuses/filter', { track: ['fogg','kya chal','whats happening','whats up'] ,language:"en"})
 stream.on('tweet',Meteor.bindEnvironment( function (tweet) {
 
 
 
-    console.log(tweet);
+   // console.log(tweet);
     var stringData=JSON.stringify(tweet);
     var jsonData=JSON.parse(stringData);
     var timeMilliSeconds=Math.floor(Date.now());
 
     //adding tweet to database
+
     tweetList.insert({tweet:jsonData,added:timeMilliSeconds});
 
     //liking the tweet
      T.post('favorites/create', {id:jsonData.id_str }, function(err, data, response) {
+      console.log("---------------------------------------------------------")
+         console.log("id: "+jsonData.user.name);
+         console.log("text: "+jsonData.text);
+         console.log("err:   "+err);
+         console.log("data:   "+JSON.stringify(data));
+         console.log("response:   "+JSON.stringify(response));
      console.log("tweet liked successfully");
      });
 
@@ -61,7 +68,7 @@ stream.on('tweet',Meteor.bindEnvironment( function (tweet) {
 
 Meteor.publish('tweetList',function(){
 
-    return tweetList.find({}, {sort: {added : -1},limit:5 });
+    return tweetList.find({}, {sort: {added : -1},limit:10 });
 });
 
 
