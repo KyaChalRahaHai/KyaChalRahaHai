@@ -25,7 +25,7 @@ stream.on('tweet',Meteor.bindEnvironment( function (tweet) {
 
 
 
-   // console.log(tweet);
+   //console.log(tweet);
     var stringData=JSON.stringify(tweet);
     var jsonData=JSON.parse(stringData);
     var timeMilliSeconds=Math.floor(Date.now());
