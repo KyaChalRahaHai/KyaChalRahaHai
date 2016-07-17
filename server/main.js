@@ -20,7 +20,7 @@ var india=['67.4560546875','5.3972734077','98.0419921875','37.5445773209'];
 // filter the public stream by english tweets containing `#`
 //
 //var stream = T.stream('statuses/filter', { track: ['fogg','scent','kya chal raha hai','kyachalrahahai','perfume','deodrant','spray','fogg chal raha hai'] ,language:"en"})
-var stream = T.stream('statuses/filter', { track: ['fogg','kya chal','whats happening','#fogg','chal raha'] ,language:"en"})
+var stream = T.stream('statuses/filter', { track: ['kya chal raha hai','fogg chal raha hai'] ,language:"en"})
 stream.on('tweet',Meteor.bindEnvironment( function (tweet) {
 
 
@@ -35,7 +35,7 @@ stream.on('tweet',Meteor.bindEnvironment( function (tweet) {
     tweetList.insert({tweet:jsonData,added:timeMilliSeconds});
 
     //liking the tweet
-    /* T.post('favorites/create', {id:jsonData.id_str }, function(err, data, response) {
+    T.post('favorites/create', {id:jsonData.id_str }, function(err, data, response) {
       console.log("---------------------------------------------------------")
          console.log("id: "+jsonData.user.name);
          console.log("text: "+jsonData.text);
@@ -43,7 +43,7 @@ stream.on('tweet',Meteor.bindEnvironment( function (tweet) {
          console.log("data:   "+JSON.stringify(data));
          console.log("response:   "+JSON.stringify(response));
      console.log("tweet liked successfully");
-     });*/
+     });
 
 
 
